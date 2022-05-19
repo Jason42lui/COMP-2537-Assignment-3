@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: bisque;
+        }
+        .pokemonBox {
+            display: flex;
+            margin-top: 5rem;
+            margin-right: 0%;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: coral;
+            border-radius: 3%;
+        }
+
+        .pokemonBox img {
+            width: 500px;
+            background-color: purple;
+            border-radius: 50%;
+        }
+
+        .pokemonBox p {
+            margin-top: 1rem;
+        }
+
+        .pokemonBox .pokemonInfos {
+            padding: 5rem;
+        }
+
+        .pokemonInfos {
+            margin-left: 20px;
+        }
+
+        .title {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        
+        .title span{
+            font-size: 65px;
+            font-weight: bold;
+        }
+
+        .title p{
+            font-size: 25px;
+        }
+
+        @media screen and (max-width: 900px) {
+            .pokemonBox {
+                flex-direction: column;
+            }
+
+            .title span{
+            font-size: 45px;
+            font-weight: bold;
+        }
+
+        .title p{
+            font-size: 15px;
+        }
+        .pokemonBox img {
+            width: 340px;
+            background-color: purple;
+            border-radius: 50%;
+        }
+        .pokemonBox {
+            margin-top: 1.5rem;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="title"><span>Pokemon Profile</span>
+            <p> This page is dedicated to the selected pokemon to display their stats</p>
+        </div>
+    </header>
+    
+    <div class="pokemonBox">
+        <div>
+            <img
+                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/<%= id %>.png">
+        </div>
+        <div class="pokemonInfo">
+            <div class="top_info">
+                <h1> ID: <%= id %>
+                </h1>
+                <h1> Name: <%= name %>
+                </h1>
+                <h3> Type: <%= type %>
+                </h3>
+                <h3> Height: <%= height %> dm</h3>
+                <h3> Weight: <%= weight %> hg</h3>
+            </div>
+            <div class="progress_bars">
+                <h4>Hp:</h4> <progress id="file" value="<%= hp %>" max="255" class="health"> </progress>
+                <h4>Attack:</h4> <progress id="file" value="<%= attack %>" max="255" class="attack"></progress>
+                <h4>Defense:</h4> <progress id="file" value="<%= defense %>" max="255" class="defense"></progress>
+                <h4>Speed:</h4> <progress id="file" value="<%= speed %>" max="255" class="speed"></progress>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
