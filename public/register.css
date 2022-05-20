@@ -1,0 +1,67 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+html {
+    background: url(register_background.png);
+    background-size: 100% 150%;
+    background-repeat: no-repeat;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    padding: 5rem;
+    margin-top: 12rem;
+    border-radius: 2rem;
+    border: 1rem solid #000;
+}
+
+.register-form h1 {
+    font-size: 350%
+}
+
+.register-form label {
+    font-size: 200%
+}
+
+.register-form span{
+    font-size: 135%;
+    margin-top: 2rem;
+}
+
+.register-form a{
+    font-size: 120%;
+    margin-top: 2rem;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+form button{
+    margin-top: 2rem;
+    width: 50%;
+    font-size: 175%;
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+}
+
+form div {
+    margin-top: 1rem;
+}
+
+form input{
+    width: 15rem;
+    height: 2rem;
+}
+
