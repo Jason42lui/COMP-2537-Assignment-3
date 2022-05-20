@@ -65,7 +65,7 @@
 
         }
 
-        nav a {
+        nav a, button {
             display: inline-block;
 
 
@@ -82,6 +82,14 @@
             color: #333;
         }
 
+        button {
+            background-color: #333;
+        }
+
+        form {
+            margin-bottom: 0;
+        }
+
         @media screen and (max-width: 800px) {
             .img-container {
                 width: 100%;
@@ -93,7 +101,7 @@
                 width: 100%;
             }
 
-            nav a {
+            nav a, button {
                 width: 100%;
                 float: none !important;
             }
@@ -191,9 +199,9 @@
             </div>
 
 
-            <a href="">
-                Help
-            </a>
+            <form action="/logout" method="POST">
+                <button>Logout</button>
+            </form>
 
 
         </nav>
