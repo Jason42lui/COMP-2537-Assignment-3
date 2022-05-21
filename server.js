@@ -14,8 +14,16 @@ app.listen(process.env.PORT || 5000, function (err) {
   if (err) console.log(err);
 });
 
+const Cart = require('./models/shoppingCart');
 const UserModal = require('./models/User');
 const mongoURI = process.env.DB_COLLECTION;
+
+const eventSchema = new mongoose.Schema({
+  text: String,
+  hits: Number,
+  time: String,
+});
+const eventModel = mongoose.model("timelineevents", eventSchema);
 
 mongoose
   .connect(mongoURI, {
@@ -33,7 +41,7 @@ const store = new MongoDBsession({
 
 app.use(
   session({
-    secret: "Shhhhh",
+    secret: "Sheeesh",
     resave: false,
     saveUninitialized: false,
     store: store,
@@ -48,13 +56,6 @@ const auth = (req, res, next) => {
     }
 }
 
-const eventSchema = new mongoose.Schema({
-  text: String,
-  hits: Number,
-  time: String,
-});
-const eventModel = mongoose.model("timelineevents", eventSchema);
-
 app.use(express.static("./public"));
 
 app.use(
@@ -64,6 +65,14 @@ app.use(
     extended: true,
   })
 );
+
+app.use((req, res, next) => {
+  console.log(`User details are: `);
+  console.log(req.session.user);
+  console.log("Entire session object:");
+  console.log(req.session);
+  next();
+});
 
 // R
 app.get("/timeline/getAllEvents", function (req, res) {
@@ -164,6 +173,7 @@ app.post("/login", async (req, res,) => {
     }
 
     req.session.auth = true
+    req.session.user = user
     res.redirect("/index")
 });
 
@@ -200,6 +210,10 @@ app.get("/", function (req, res, next) {
 
 app.get("/index", auth, function (req, res, next) {
     res.render("index");
+  });
+
+app.get("/personalCart", auth, function (req, res, next) {
+    res.render("personalCart");
   });
 
 app.post('/logout', (req, res) => {
@@ -266,4 +280,92 @@ app.get("/profile/:id", function (req, res) {
       });
     });
   });
+});
+
+// R
+app.get("/personalCart/allItems", function (req, res) {
+  Cart.find({}, function (err, data) {
+    if (err) {
+      console.log("Error " + err);
+    } else {
+      console.log("Data " + data);
+    }
+    res.send(data);
+  });
+});
+
+app.put("/personalCart/insert", function (req, res) {
+  console.log(req.body);
+  Cart.create(
+    {
+      pokemonID: req.body.pokemonID,
+      price: req.body.price,
+      quantitiy: req.body.quantitiy
+    },
+    function (err, data) {
+      if (err) {
+        console.log("Error " + err);
+      } else {
+        console.log("Data " + data);
+      }
+      res.send(data);
+    }
+  );
+});
+
+app.get("/personalCart/increaseQuantity:id", function (req, res) {
+  console.log(req.params);
+  Cart.updateOne(
+    {
+      _id: req.params.id,
+    },
+    {
+      $inc: { quantitiy: 1 },
+    },
+    function (err, data) {
+      if (err) {
+        console.log("Error " + err);
+      } else {
+        console.log("Data " + data);
+      }
+      res.send("Update is good");
+    }
+  );
+});
+
+app.get("/personalCart/decreaseQuantity/:id", function (req, res) {
+  console.log(req.params);
+  Cart.updateOne(
+    {
+      _id: req.params.id,
+    },
+    {
+      $inc: { quantitiy: -1 },
+    },
+    function (err, data) {
+      if (err) {
+        console.log("Error " + err);
+      } else {
+        console.log("Data " + data);
+      }
+      res.send("Update is good");
+    }
+  );
+});
+
+app.get("/personalCart/remove/:id", function (req, res) {
+  console.log(req.params);
+  Cart.remove(
+    {
+      _id: req.params.id,
+    },
+    function (err, data) {
+      if (err) {
+        console.log("Error " + err);
+      } else {
+        console.log("Data " + data);
+      }
+      res.send("Delete is good");
+    }
+  );
 });

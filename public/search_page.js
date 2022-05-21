@@ -194,11 +194,7 @@ function setup() {
     $("#find_pokemon").click(insertSearchEventTOTheTimeLineName);
     $(".delete_pokemon_type").click(delete_pokemon_type);
     $(".delete_pokemon_ability").click(delete_pokemon_ability);
-    // $(".delete_pokemon").click(function () {
-    //     console.log("its gone")
-    // });
     $("#history_content").on("click", "button", function () {
-        // console.log("its gone")
         const nameDiv = document.getElementById(`history_result_${name_g}`)
         const parent = nameDiv.parentNode;
         parent.removeChild(nameDiv)
