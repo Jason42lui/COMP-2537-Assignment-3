@@ -1,0 +1,26 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    justify-items: center;
+    margin: 2rem;
+}
+
+.orderContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+    align-items: baseline;
+    justify-items: end;
+    margin-left: 2rem;
+}
+
+#totalContainer {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+}
+
+#totalContainer button {
+    width: 100%;
+}

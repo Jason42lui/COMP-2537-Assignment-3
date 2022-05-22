@@ -314,7 +314,7 @@ app.put("/personalCart/insert", function (req, res) {
   );
 });
 
-app.get("/personalCart/increaseQuantity:id", function (req, res) {
+app.get("/personalCart/increaseQuantity/:id", function (req, res) {
   console.log(req.params);
   Cart.updateOne(
     {
