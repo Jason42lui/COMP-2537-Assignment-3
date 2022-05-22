@@ -300,7 +300,8 @@ app.put("/personalCart/insert", function (req, res) {
     {
       pokemonID: req.body.pokemonID,
       price: req.body.price,
-      quantitiy: req.body.quantitiy
+      quantitiy: req.body.quantitiy,
+      time: req.body.time
     },
     function (err, data) {
       if (err) {

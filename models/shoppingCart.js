@@ -7,6 +7,7 @@ const shoppingCartSchema = new Schema (
         pokemonID: Number,
         price: Number,
         quantitiy: Number,
+        time: String,
     },
 );
 
