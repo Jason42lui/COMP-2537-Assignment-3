@@ -2,51 +2,6 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-body {
-    background-color: #3b558f ;;
-}
-
-.orderContent {
-    display: flex;
-    align-items: baseline;
-    justify-items: end;
-    margin-left: 2rem;
-    margin-top: 1.5rem;
-    padding: 1rem;
-    background-color: #fff ;
-    border-radius: 7px;
-
-}
-
-#totalContainer {
-    display: flex;
-    justify-items: center;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-    padding: 3rem;
-    border-radius: 7px;
-}
-
-#totalContainer button {
-    width: 100%;
-}
-
-main button {
-    background-color: transparent;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    outline: none;
-}
-
-.mainContent {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
 #dummy_div {
     display: flex;
 }
@@ -137,6 +92,19 @@ img {
 
 #totalContainer {
     margin-top: 2rem;
+}
+
+main {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+}
+
+main div{
+    background-color: cadetblue;
+    border-radius: 7px;
+    margin: 2rem;
+    padding: 2rem;
 }
 
 span {

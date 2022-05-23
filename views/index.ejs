@@ -1,9 +1,18 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap"
+      rel="stylesheet"
+    />
 
     <script src="home_page.js"></script>
     <style>
+      * {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
       #outer {
         display: flex;
         flex-direction: column;
@@ -139,7 +148,7 @@
         }
 
         .logoutButton {
-        width: 100%;
+          width: 100%;
         }
       }
 
@@ -190,9 +199,9 @@
 
           <a href="/timeline"> Timeline </a>
 
-          <a href="/personalCart">
-            Cart 🛒
-        </a>
+          <a href="/oldOrder"> Previous Orders </a>
+
+          <a href="/personalCart"> Cart 🛒 </a>
         </div>
 
         <form action="/logout" method="POST">

@@ -15,6 +15,7 @@ app.listen(process.env.PORT || 5000, function (err) {
 });
 
 const Cart = require('./models/shoppingCart');
+const oldCart = require('./models/oldOrder');
 const UserModal = require('./models/User');
 const mongoURI = process.env.DB_COLLECTION;
 
@@ -159,6 +160,10 @@ app.get("/timeline", function (req, res, next) {
 
 app.get("/login", function (req, res, next) {
   res.render("login");
+});
+
+app.get("/oldOrder", function (req, res, next) {
+  res.render("oldOrder");
 });
 
 app.post("/login", async (req, res,) => {
@@ -371,6 +376,49 @@ app.get("/personalCart/remove/:id", function (req, res) {
         console.log("Data " + data);
       }
       res.send("Delete is good");
+    }
+  );
+});
+
+app.get("/personalCart/remove", function (req, res) {
+  console.log(req.params);
+  Cart.remove({},
+    function (err, data) {
+      if (err) {
+        console.log("Error " + err);
+      } else {
+        console.log("Data " + data);
+      }
+      res.send("Delete is good");
+    }
+  );
+});
+
+app.get("/oldOrder/allItems", function (req, res) {
+  oldCart.find({}, function (err, data) {
+    if (err) {
+      console.log("Error " + err);
+    } else {
+      console.log("Data " + data);
+    }
+    res.send(data);
+  });
+});
+
+app.put("/oldOrder/insert", function (req, res) {
+  oldCart.create(
+    {
+      Items: req.body.Items,
+      totalCost: req.body.totalCost,
+      time: req.body.time
+    },
+    function (err, data) {
+      if (err) {
+        console.log("Error " + err);
+      } else {
+        console.log("Data " + data);
+      }
+      res.send(data);
     }
   );
 });

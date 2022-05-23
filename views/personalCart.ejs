@@ -1,61 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="cart.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="cart.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <img src="header.png" alt="">
+      <img src="header.png" alt="" />
     </header>
-    
+
     <nav>
+      <div id="dummy_div">
+        <a href="/index"> Home Page </a>
+        <a href="/search_page"> Search page </a>
 
-        <div id="dummy_div">
-            <a href="/index">
-                Home Page
-            </a>
-            <a href="/search_page">
-                Search page
-            </a>
+        <a href="/timeline"> Timeline </a>
 
+        <a href="/oldOrder"> Previous Orders </a>
 
-            <a href="/timeline">
-                Timeline
-            </a>
+        <a href="/personalCart"> Cart 🛒 </a>
+      </div>
 
-            <a href="/personalCart">
-                Cart 🛒
-            </a>
-        </div>
-
-
-        <form action="/logout" method="POST">
-            <button class="logoutButton">Logout</button>
-        </form>
-
-
-
+      <form action="/logout" method="POST">
+        <button class="logoutButton">Logout</button>
+      </form>
     </nav>
     <div class="mainContent">
-    <main>
-    <h1>Shopping cart 🛒</h1>
-    <hr>
-    </main>
-    <div id="totalContainer">
-        <h1> Cost Calculation</h1>
-    </div>
+      <main>
+        <h1>Shopping cart 🛒</h1>
+        <hr />
+      </main>
+      <div id="totalContainer">
+        <h1>Cost Calculation</h1>
+      </div>
     </div>
     <footer>
-        <h5>
-            Copyright © Your Website 2022
-        </h5>
-        <img src="footer.png" alt="">
+      <h5>Copyright © Your Website 2022</h5>
+      <img src="footer.png" alt="" />
     </footer>
     <script src="cart.js"></script>
-</body>
+  </body>
 </html>

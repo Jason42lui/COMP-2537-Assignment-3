@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="timeline.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="timeline.js"></script>
@@ -22,6 +28,8 @@
 
           <a href="/timeline"> Timeline </a>
 
+          <a href="/oldOrder"> Previous Orders </a>
+
           <a href="/personalCart"> Cart 🛒 </a>
         </div>
 
@@ -36,18 +44,18 @@
           <main></main>
         </div>
         <div class="profileContent">
-            <h1>Profile</h1>
-            <div class="profileInfo">
+          <h1>Profile</h1>
+          <div class="profileInfo">
             <%userList.forEach(users => {%>
-                <div>
-                <img src="profile.png" alt="">
-                </div>
-                <div class="info">
-                <h3>Username: <%= users.username %></h3>
-                <h3>Email: <%= users.email %></h3>
-                </div>
-                <%})%>
+            <div>
+              <img src="profile.png" alt="" />
             </div>
+            <div class="info">
+              <h3>Username: <%= users.username %></h3>
+              <h3>Email: <%= users.email %></h3>
+            </div>
+            <%})%>
+          </div>
         </div>
       </div>
 
