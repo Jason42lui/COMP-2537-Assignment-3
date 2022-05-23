@@ -71,7 +71,7 @@ function display_abilities(abilities_) {
             success: processPokemonResp_abilities
         })
     }
-    $("#history_content").append($(`<div id="history_result_${abilities_}"><a href="javascript:processPokemonResp_abilities(http://localhost:5000/api/v2/pokemon/type/${i})">Pokemon's ability: ${abilities_}</a><button class="delete_pokemon_ability">X</button></div>`))
+    $("#history_content").append($(`<div id="history_result_${abilities_}"><a href="javascript:processPokemonResp_abilities(https://infinite-river-98790.herokuapp.com/api/v2/pokemon/type/${i})">Pokemon's ability: ${abilities_}</a><button class="delete_pokemon_ability">X</button></div>`))
 
 }
 
@@ -130,7 +130,7 @@ var formatted = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds()
 
 function insertSearchEventTOTheTimeLineType(poke_type) {
     $.ajax({
-        url: "http://localhost:5000/timeline/input",
+        url: "https://infinite-river-98790.herokuapp.com/timeline/input",
         type: "put",
         data: {
             text: `Client has searched for Pokemon type: ${poke_type}`,
@@ -145,7 +145,7 @@ function insertSearchEventTOTheTimeLineType(poke_type) {
 
 function insertSearchEventTOTheTimeLineAbilities(poke_abilities) {
     $.ajax({
-        url: "http://localhost:5000/timeline/input",
+        url: "https://infinite-river-98790.herokuapp.com/timeline/input",
         type: "put",
         data: {
             text: `Client has searched for Pokemon ability: ${poke_abilities}`,
@@ -161,7 +161,7 @@ function insertSearchEventTOTheTimeLineAbilities(poke_abilities) {
 function insertSearchEventTOTheTimeLineName() {
     pokeName = document.getElementById("pokemon_name").value
     $.ajax({
-        url: "http://localhost:5000/timeline/input",
+        url: "https://infinite-river-98790.herokuapp.com/timeline/input",
         type: "put",
         data: {
             text: `Client has searched for Pokemon name: ${pokeName}`,

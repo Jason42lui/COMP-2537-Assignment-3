@@ -196,7 +196,7 @@ app.post("/register", async (req, res,) => {
     let user = await UserModal.findOne({email});
 
     if (user) {
-        return res.redirect('/register');
+        return res.redirect('/index');
     }
 
     const hashedpass = await bcrypt.hash(password, 5);
@@ -209,7 +209,7 @@ app.post("/register", async (req, res,) => {
 
     await user.save();
 
-    res.redirect('/login')
+    res.redirect('/index')
 });
 
 

@@ -2,7 +2,7 @@ orderNumber = 0
 function loadEvents() {
   $.ajax({
     // url: "https://infinite-river-98790.herokuapp.com/timeline/getAllEvents",
-    url: "http://localhost:5000/oldOrder/allItems",
+    url: "https://infinite-river-98790.herokuapp.com/oldOrder/allItems",
     type: "get",
     success: (x) => {
       console.log(x);
