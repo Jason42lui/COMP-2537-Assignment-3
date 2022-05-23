@@ -110,6 +110,16 @@ nav a:hover {
   justify-content: center;
 }
 
+.logoutButton {
+  display: inline-block;
+  color: blue;
+  text-decoration: none;
+  padding: 16px 16px;
+  text-align: center;
+  border: gold;
+  background-color: gold;
+}
+
 header img{
   height: 35vh; 
   width: 100%; 
@@ -142,5 +152,8 @@ footer {
 
   .search_header {
     margin-top: 20vh;
+  }
+  .logoutButton {
+    width: 100%;
   }
 }

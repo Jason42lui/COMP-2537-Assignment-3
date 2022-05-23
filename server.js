@@ -150,7 +150,11 @@ app.get("/search_page", function (req, res, next) {
 });
 
 app.get("/timeline", function (req, res, next) {
-  res.render("timeline");
+  UserModal.find({}, function(err, users) {
+    res.render('timeline', {
+      userList: users
+    })
+  })
 });
 
 app.get("/login", function (req, res, next) {

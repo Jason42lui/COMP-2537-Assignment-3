@@ -42,7 +42,7 @@ function loadTotalCost(){
                 <h3> Tax: ${TotalCost * tax} </h3>
                 <h3> Shipping: ${shipping} </h3>
                 <h2> Order Total: ${(TotalCost) + (TotalCost * tax) + (shipping)}</h2>
-                <button>Place order</button>                
+                <button class="orderButton">Place order</button>                
                 </div>
 
                 `)

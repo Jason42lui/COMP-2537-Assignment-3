@@ -9,13 +9,53 @@
     <title>Document</title>
 </head>
 <body>
+    <header>
+        <img src="header.png" alt="">
+    </header>
+    
+    <nav>
+
+        <div id="dummy_div">
+            <a href="/index">
+                Home Page
+            </a>
+            <a href="/search_page">
+                Search page
+            </a>
+
+
+            <a href="/timeline">
+                Timeline
+            </a>
+
+            <a href="/personalCart">
+                Cart 🛒
+            </a>
+        </div>
+
+
+        <form action="/logout" method="POST">
+            <button class="logoutButton">Logout</button>
+        </form>
+
+
+
+    </nav>
+    <div class="mainContent">
     <main>
     <h1>Shopping cart 🛒</h1>
-        
+    <hr>
     </main>
     <div id="totalContainer">
         <h1> Cost Calculation</h1>
     </div>
+    </div>
+    <footer>
+        <h5>
+            Copyright © Your Website 2022
+        </h5>
+        <img src="footer.png" alt="">
+    </footer>
     <script src="cart.js"></script>
 </body>
 </html>

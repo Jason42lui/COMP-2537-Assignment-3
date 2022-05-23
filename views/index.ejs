@@ -1,222 +1,211 @@
 <html>
-
-<head>
+  <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script src="home_page.js"></script>
     <style>
-        #outer {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
+      #outer {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
 
+      body {
+        margin: 0px;
+        background: black;
+      }
 
+      body,
+      html {
+        height: 100%;
+      }
 
-        body {
-            margin: 0px;
-            background: black;
-        }
+      nav {
+        background-color: #333;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
 
-        body,
-        html {
-            height: 100%;
-        }
+      * {
+        box-sizing: border-box;
+      }
 
-        nav {
+      .img-container {
+        width: 33%;
+        float: left;
+        padding: 10px;
+      }
 
-            background-color: #333;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+      img {
+        border-radius: 5px;
+      }
 
-        }
+      #center {
+        margin: 0 auto;
+        width: 90%;
+      }
 
+      .clearfix {
+        overflow: hidden;
+      }
 
+      .clearfix::after {
+        clear: both;
+      }
 
-        * {
-            box-sizing: border-box;
-        }
+      nav a,
+      button {
+        display: inline-block;
 
+        color: #f2f2f2;
+        text-decoration: none;
+
+        padding: 14px 16px;
+        text-align: center;
+      }
+
+      nav a:hover {
+        background-color: f2f2f2;
+        color: #333;
+      }
+
+      button {
+        background-color: #333;
+      }
+
+      form {
+        margin-bottom: 0;
+      }
+
+      .logoutButton {
+        display: inline-block;
+        color: #f2f2f2;
+        text-decoration: none;
+        padding: 14px 16px;
+        text-align: center;
+        border: #333;
+        background-color: #333;
+      }
+
+      @media screen and (max-width: 800px) {
         .img-container {
-            width: 33%;
-            float: left;
-            padding: 10px;
-
-
-
-        }
-
-        img {
-            border-radius: 5px;
+          width: 100%;
+          float: none;
+          padding: 10px 0px 10px 0px;
         }
 
         #center {
-            margin: 0 auto;
-            width: 90%;
+          width: 100%;
         }
 
-        .clearfix {
-            overflow: hidden;
-        }
-
-        .clearfix::after {
-            clear: both;
-
-        }
-
-        nav a, button {
-            display: inline-block;
-
-
-            color: #f2f2f2;
-            text-decoration: none;
-
-            padding: 14px 16px;
-            text-align: center;
-
-        }
-
-        nav a:hover {
-            background-color: f2f2f2;
-            color: #333;
-        }
-
+        nav a,
         button {
-            background-color: #333;
+          width: 100%;
+          float: none !important;
         }
+      }
 
-        form {
-            margin-bottom: 0;
-        }
+      h1 {
+        margin: 0px;
+      }
 
-        @media screen and (max-width: 800px) {
-            .img-container {
-                width: 100%;
-                float: none;
-                padding: 10px 0px 10px 0px;
-            }
+      footer,
+      header {
+        text-align: center;
+      }
 
-            #center {
-                width: 100%;
-            }
+      main {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
 
-            nav a, button {
-                width: 100%;
-                float: none !important;
-            }
-        }
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+        box-sizing: border-box;
+      }
 
-        h1 {
-            margin: 0px;
-        }
-
-        footer,
-        header {
-            text-align: center;
-        }
-
-        main {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-        }
-
-        * {
-            font-family: Arial, Helvetica, sans-serif;
-            box-sizing: border-box;
-        }
-
-        @media screen and (max-width: 600px) {
-
-            main,
-            nav,
-            .images_group,
-            #dummy_div {
-                flex-direction: column;
-            }
-
-            .images_group {
-                width: 100% !important;
-            }
-        }
-
-        img {
-            width: 100%;
-            height: 100%;
-        }
-
-        .img_container {
-            height: 30%;
-            color: white;
-            text-align: center;
+      @media screen and (max-width: 600px) {
+        main,
+        nav,
+        .images_group,
+        #dummy_div {
+          flex-direction: column;
         }
 
         .images_group {
-            width: 31%;
-            display: flex;
-            justify-content: space-around;
-            flex-direction: column;
-            height: 100%;
+          width: 100% !important;
         }
 
-        #dummy_div {
-            display: flex;
+        .logoutButton {
+        width: 100%;
         }
+      }
 
-        header img {
-            height: 35vh;
-            width: 100%;
-        }
+      img {
+        width: 100%;
+        height: 100%;
+      }
 
-        footer {
-            color: white;
-        }
+      .img_container {
+        height: 30%;
+        color: white;
+        text-align: center;
+      }
+
+      .images_group {
+        width: 31%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      #dummy_div {
+        display: flex;
+      }
+
+      header img {
+        height: 35vh;
+        width: 100%;
+      }
+
+      footer {
+        color: white;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div id="outer">
-        <header>
-            <img src="header.png" alt="">
-        </header>
+      <header>
+        <img src="header.png" alt="" />
+      </header>
 
-        <nav>
+      <nav>
+        <div id="dummy_div">
+          <a href="/index"> Home Page </a>
+          <a href="/search_page"> Search page </a>
 
-            <div id="dummy_div">
-                <a href="/index">
-                    Home Page
-                </a>
-                <a href="/search_page">
-                    Search page
-                </a>
+          <a href="/timeline"> Timeline </a>
 
+          <a href="/personalCart">
+            Cart 🛒
+        </a>
+        </div>
 
-                <a href="/timeline">
-                    Timeline
-                </a>
-            </div>
+        <form action="/logout" method="POST">
+          <button class="logoutButton">Logout</button>
+        </form>
+      </nav>
 
+      <main></main>
 
-            <form action="/logout" method="POST">
-                <button>Logout</button>
-            </form>
-
-
-        </nav>
-
-        <main>
-
-        </main>
-
-        <footer>
-            <h5>
-                Copyright © Your Website 2022
-            </h5>
-            <img src="footer.png" alt="">
-        </footer>
+      <footer>
+        <h5>Copyright © Your Website 2022</h5>
+        <img src="footer.png" alt="" />
+      </footer>
     </div>
-</body>
-
+  </body>
 </html>
